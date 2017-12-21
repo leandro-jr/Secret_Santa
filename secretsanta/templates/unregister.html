@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+    <div class="container">
+    <p>
+        <h4>With you want to unregister, please confirm below:</h4>
+    </p>
+    <form action="{{ url_for('unregister') }}" method="post">
+        <fieldset>
+            <div class="form-group">
+                <button class="btn btn-md btn-primary btn-block" type="submit">Unregister</button>
+            </div>
+        </fieldset>
+    </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Help
+{% endblock %}
+
+{% block main %}
+    <div class="well" id="well2">
+        <h4>Participate on the Secret Santa is easy! Just follow these simple steps:</h4>
+    </div>
+
+    <div id="carousel" class="carousel slide" data-ride="carousel" data-interval="20000">
+        <ol class="carousel-indicators">
+          <li data-target="#carousel-help" data-slide-to="0" class="active"></li>
+          <li data-target="#carousel-help" data-slide-to="1"></li>
+          <li data-target="#carousel-help" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+          <div class="item active">
+            <div>
+                <h3>1. Sign In</h3>
+                <br/>
+                <h4>Create your user</h4>
+                <h4>Create or join a group</h4>
+                <h4>If you create a group, you will be assigned as group manager</h4>
+                <br/>
+                <br/>
+            </div>
+          </div>
+          <div class="item">
+            <div>
+                <h3>2. Once the Group is Formed...</h3>
+                <br/>
+                <h4>By the group manager command, the Secret Santas will be randomly assigned</h4>
+                <h4>The group manager chooses the location, date and gift's maximum value</h4>
+                <h4>The group manager can change the Secret Santa details and perfom new draw if the group chooses to</h4>
+                <br/>
+                <br/>
+            </div>
+          </div>
+          <div class="item">
+            <div>
+                <h3>3. Have Fun!</h3>
+                <br/>
+                <h4>Create your wishlist</h4>
+                <h4>See the wishlist of your Secret Santa</h4>
+                <h4>Exchange messages with your Secret Santa</h4>
+                <br/>
+                <br/>
+            </div>
+          </div>
+        </div>
+        <a class="left carousel-control" href="#carousel" role="button" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#carousel" role="button" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+        </div>
+    </div>
+{% endblock %}
+

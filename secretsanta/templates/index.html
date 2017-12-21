@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+    <div class="well">
+        <h4>Wellcome <b>{{ user }}</b>. Your Secret Santa is <b>{{ username_secret }}</b>.
+        The gift value can be of up to <b>US${{ gift_value }}</b>. There is no minimum value.</h4>
+    </div>
+    <p>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">See {{ username_secret }} Wishlist:</h4>
+        </div>
+        <div class="list-group">
+        {% for i in wishlist_secret %}
+            <a href="https://www.google.com.br/search?tbm=shop&q={{ i.item }}" target="_blank" class="list-group-item"><span class="item"><h5>{{ i.item }}</h5></a>
+        {% endfor %}
+        </div>
+    </div>
+    </p>
+    <br/>
+    <p>
+        <h4>Insert an item to your Wishlist:</h4>
+
+    <form action="{{ url_for('index') }}" method="post">
+        <fieldset>
+            <div class="form-group">
+                <input autocomplete="off" autofocus class="form-control" name="wishlist" placeholder="Item" type="text"/>
+                <button class="btn btn-md btn-primary" type="submit">Insert</button>
+                <h5>Look for your gift at <a href="https://www.google.com.br/shopping?hl=pt-BR&tab=wf" target="_blank">Google</a></h5>
+            </div>
+        </fieldset>
+    </form>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">Your Wishlist:</h4>
+        </div>
+        <div class="list-group">
+        {% for n in wishlist %}
+            <a href="https://www.google.com.br/search?tbm=shop&q={{ n.item }}" target="_blank" class="list-group-item"><span class="item"><h5>{{ n.item }}</h5>
+            <form action="{{ url_for('delete_wishlist') }}" method="post">
+                <fieldset>
+                    <div class="input-group">
+                        <input type="hidden" value={{ n.Id }} class="delete-control" name="delete_wishlist">
+                        <span class="input-group-btn">
+                            <div class="btn-group btn-group-sm" role="group" aria-label="...">
+                                <button type="submit" class="btn btn-warning">Delete Item</button>
+                            </div>
+                        </span>
+                    </div>
+                </fieldset>
+            </form>
+            </a>
+        {% endfor %}
+        </div>
+    </div>
+    <form action="{{ url_for('send_wishlist') }}" method="post">
+        <fieldset>
+            <div class="form-group">
+                <h4>Send your Wishlist to your Secret Santa <button class="btn btn-md btn-primary" type="submit">Send</button></h4>
+            </div>
+        </fieldset>
+    </form>
+    </p>
+    <br/>
+    <div class="well">
+        <h4>
+        The Secret Santa will happen at <b>{{ date }}</b> on <b>{{ local }}</b>.
+        </h4>
+    </div>
+    </div>
+{% endblock %}
+

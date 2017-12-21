@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Manage Group Read Only
+{% endblock %}
+
+{% block main %}
+    <div class="well" id="well2">
+        <h4>You are not the group manager. Your Secret Santa group is <b>{{ group }}</b></h4>
+        <h4>Your group is formed by <b>{{ num_members }}</b> members:
+        {% for x in users %}
+          <b>{{ x.username }}</b>,
+        {% endfor %}        </h4>
+        <h4>Secret Santa randon assignment <b>{{ lottery }}.</b></h4>
+    </div>
+    <br/>
+{% endblock %}
+

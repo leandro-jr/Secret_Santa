@@ -1,0 +1,162 @@
+.container
+{
+    /* center contents*/
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+/* colors for navbar */
+.navbar-default
+{
+    background-color: /*#FFFFFF #3498db*/ #2c3e50;
+}
+
+.navbar-default .navbar-brand .logo
+{
+    color: /*#ea433b*/#3498db;
+}
+
+.navbar-default .headers
+{
+    color: #bdc3c7;
+}
+
+body
+{
+  background-color: #bdc3c7;
+  color: #2c3e50;
+}
+main
+{
+    text-align: center;
+    max-width: 100%;
+}
+
+main .well
+{
+    text-align:justify;
+    color: #bdc3c7;
+    background-color: /*#FFFFFF #3498db*/ #2c3e50;
+}
+
+#well2
+{
+    text-align:center;
+    color: #bdc3c7;
+    background-color: /*#FFFFFF #3498db*/ #2c3e50;
+}
+
+main .panel-default .panel-heading
+{
+    text-align:center;
+    color: #bdc3c7;
+    background-color: /*#FFFFFF #3498db*/ #2c3e50;
+}
+
+main .panel-default .list-group .item
+{
+    text-align:center;
+    color: #2c3e50;
+    background-color: /*#FFFFFF #3498db*/ #bdc3c7;
+}
+
+main .panel-default .list-group
+{
+    text-align:center;
+    color: #2c3e50;
+    background-color: /*#FFFFFF #3498db*/ #bdc3c7;
+}
+
+main .form-control
+{
+    /* center form controls */
+    display: inline-block;
+
+    /* override Bootstrap's 100% width for form controls */
+    max-width: 330px;
+}
+
+main .btn
+{
+    /* center form controls */
+    display: inline-block;
+
+    /* override Bootstrap's 100% width for form controls */
+    max-width: 330px;
+}
+
+
+main .message-control
+{
+    /* center message controls */
+    display: inline-block;
+
+    /* override Bootstrap's 100% width for message controls */
+    width: 40%;
+}
+
+main .delete-control
+{
+    /* center message controls */
+    display: inline-block;
+
+    /* override Bootstrap's 100% width for message controls */
+    width: 0%;
+    height: 0%;
+}
+
+main img
+{
+    /* constrain images on small screens */
+    max-width: 100%;
+}
+
+main td
+{
+    /* center-align tables' cells */
+    text-align: justify;
+    width: auto;
+    font-size: auto;
+}
+
+main table
+{
+    width:100%;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+main cell
+{
+    display: table-cell;
+    vertical-align: middle;
+    text-align: justify;
+}
+main tr
+{
+    height: auto;
+}
+
+main p
+{
+    font-size: 12pt;
+}
+
+main b
+{
+    color: #3498db;
+}
+
+#map
+{
+    width: 100%;
+    height: 400px;
+    background-color: grey;
+}
+
+#carousel
+{
+    color: #bdc3c7;
+    background-color: /*#FFFFFF #3498db*/ #2c3e50;
+}

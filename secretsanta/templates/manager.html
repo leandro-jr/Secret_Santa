@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Manage Group
+{% endblock %}
+
+{% block main %}
+    <div class="well" id="well2">
+        <h4>You are the group manager. Manage your Secret Santa group: <b>{{ group }}</b></h4>
+        <h4>Your group is formed by <b>{{ num_members }}</b> members:
+        {% for x in users %}
+          <b>{{ x.username }}</b>,
+        {% endfor %}        </h4>
+        <h4>The random assignment <b>{{ lottery }}.</b></h4>
+    </div>
+    <div class="well" id="well2">
+    <form action="{{ url_for('manager') }}" method="post">
+        <fieldset>
+            <div class="form-group">
+                <input autocomplete="off" autofocus class="form-control" name="gift_value" placeholder="Gift Maximum Value (US$)" type="text"/>
+                <input autocomplete="off" autofocus class="form-control" name="date" placeholder="Secret Santa Date and Time" type="text"/>
+                <input autocomplete="off" autofocus class="form-control" name="local" placeholder="Secret Santa Address" type="text"/>
+                <button class="btn btn-md btn-primary" type="submit">Submit</button>
+            </div>
+        </fieldset>
+    </form>
+    </div>
+    <form action="{{ url_for('lottery') }}" method="post">
+        <fieldset>
+            <div class="form-group">
+                <input type="hidden" value="1" class="form-control" name="lottery">
+                <button class="btn btn-md btn-primary btn-block" id="lottery_button"type="submit">Secret Santa Randon Assignment</button>
+            </div>
+            <h6>Attention: a new randon assignment will erase the previous one!</h6>
+        </fieldset>
+    </form>
+{% endblock %}
+

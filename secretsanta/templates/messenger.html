@@ -1,0 +1,76 @@
+{% extends "layout_messenger.html" %}
+
+{% block title %}
+    Messenger
+{% endblock %}
+
+{% block main %}
+    <div class="well" id="well3">
+        {% for n in message_friend %}
+            {% if n.username == username %}
+                {% if n.msg_to_friend %}
+                    <div class="well">
+                        <span class="glyphicon glyphicon-user" aria-hidden="true"> <b>{{ username }}:</b></span><p>{{ n.msg_to_friend }}</p>
+                        <h6 id="time">{{ n.time }}</h6>
+                    </div>
+                {% endif %}
+            {% elif n.username == username_secret %}
+                {% if n.msg_to_secret %}
+                    <div class="well" id="well2">
+                        <span class="glyphicon glyphicon-user" aria-hidden="true"> <b>{{ username_secret }}:</b></span><p>{{ n.msg_to_secret }}</p>
+                        <h6 id="time">{{ n.time }}</h6>
+                    </div>
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+
+    <p>
+        <h4 id="text_in_well">Write a message to <b>{{ username_secret }}</b>:</h4> <h6 id="text_in_well">(Remember, he/she doesn't know who you are...)</h6>
+    </p>
+    <form action="{{ url_for('messenger') }}" method="post">
+        <fieldset>
+            <div class="input-group">
+                <input class="form-control" name="msg_to_friend" placeholder="Message" type="text" aria-describedby="Message"/>
+                <span class="input-group-btn">
+                    <button class="btn btn-md btn-primary btn-block" type="submit">Send</button>
+                </span>
+            </div>
+        </fieldset>
+    </form>
+    </div>
+    <br/>
+    <div class="well" id="well3">
+        {% for n in message_lottery %}
+            {% if n.username == username %}
+                {% if n.msg_to_secret %}
+                    <div class="well">
+                        <span class="glyphicon glyphicon-user" aria-hidden="true"> <b>{{ username }}:</b></span><p>{{ n.msg_to_secret }}</p>
+                        <h6 id="time">{{ n.time }}</h6>
+                    </div>
+                {% endif %}
+            {% elif n.username == username_lottery %}
+                {% if n.msg_to_secret %}
+                    <div class="well" id="well2">
+                        <span class="glyphicon glyphicon-user" aria-hidden="true"> <b>Who drawn you on Secret Santa:</b></span><p>{{ n.msg_to_secret }}</p>
+                        <h6 id="time">{{ n.time }}</h6>
+                    </div>
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+    <p>
+        <h4 id="text_in_well">Write a message to <b>who drawn you</b> on Secret Santa:</h4>
+    </p>
+    <form action="{{ url_for('messenger') }}" method="post">
+        <fieldset>
+            <div class="input-group">
+                <input type="text" class="form-control" name="msg_to_secret" placeholder="Message" aria-describedby="Message">
+                <span class="input-group-btn">
+                    <button class="btn btn-md btn-primary btn-block" type="submit">Send</button>
+                </span>
+            </div>
+        </fieldset>
+    </form>
+    </div>
+    <br/>
+{% endblock %}
+
